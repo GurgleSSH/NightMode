@@ -9,6 +9,8 @@
 
 @protocol LSNightMode <NSObject>
 
+@required
+
 - (void)setToDayMode;
 - (void)setToNightMode;
 
@@ -24,8 +26,8 @@
  *  @author liushuai1992@gmail.com, 2016-03
  *
  *  @brief one step method for night mode
- *  供外部调用，改变夜间模式状态的一步调用方法（在夜间、日间模式之间切换）。
- *  一般地，在设置夜间模式页面的ViewController调用该方法，该ViewController应该是观察者。
+ *  供外部调用，获取当前夜间模式状态的一步调用方法。
+ *  一般地，在设置夜间模式页面的ViewController调用该方法，该ViewController应该是观察者。添加观察者之后要在dealloc方法中对其进行移除！
  *
  *  1.添加观察者用来观察系统发出的夜间模式和日间模式通知。
  *  2.获取当前夜间模式状态，并发出夜间模式状态的通知。

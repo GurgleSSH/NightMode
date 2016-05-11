@@ -21,8 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[LSNightMode sharedNightMode] nightModeWithObserver:self];
-    [[LSNightMode sharedNightMode] getNightModeState];
+    [[LSNightMode sharedNightMode] nightModeWithObserver:self]; //一步方法，将当前VC设为观察者，从配置文件中获取当前夜间模式状态并设置成对应模式
     
 }
 

@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //为swith按钮添加点击事件
     [self.swithButton addTarget:self action:@selector(swithButtonHandle:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -32,22 +33,15 @@
         _swithButton = [[UISwitch alloc] initWithFrame:CGRectMake(100, 100, 0, 0)];
         [self.view addSubview:_swithButton];
     }
+    //根据当前夜间模式状态将swith按钮设置成为对于状态
     [_swithButton setOn:[[LSNightMode sharedNightMode] getNightModeState]];
     return _swithButton;
 }
 
+//点击swith按钮时调用
 - (void)swithButtonHandle:(UISwitch *)switchButton {
+    //改变当前夜间模式状态
     [[LSNightMode sharedNightMode] changeNightMode];
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
