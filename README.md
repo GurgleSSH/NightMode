@@ -157,6 +157,7 @@
 
 	- (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.swithButton];
     //为swith按钮添加点击事件
     [self.swithButton addTarget:self action:@selector(swithButtonHandle:) forControlEvents:UIControlEventValueChanged];
 	}
@@ -169,7 +170,6 @@
 	- (UISwitch *)swithButton {
     if (!_swithButton) {
         _swithButton = [[UISwitch alloc] initWithFrame:CGRectMake(100, 100, 0, 0)];
-        [self.view addSubview:_swithButton];
     }
     //根据当前夜间模式状态将swith按钮设置成为对于状态
     [_swithButton setOn:[[LSNightMode sharedNightMode] getNightModeState]];
